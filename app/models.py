@@ -50,3 +50,12 @@ class Usuario(db.Model):
 
     def __repr__(self):
         return '<Usuario {} {}>'.format(self.username, self.email)
+
+class Notas(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    nota = db.Column(db.Integer)
+    id_estudiante = db.Column(db.Integer, db.ForeignKey('estudiante.id'))
+    id_usuario = db.Column(db.Integer, db.ForeignKey('usuario.id'))
+
+    def __repr__(self):
+        return '<Notas {} {} {}>'.format(self.nota, self.id_estudiante, self.id_usuario)
