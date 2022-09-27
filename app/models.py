@@ -1,6 +1,6 @@
 from datetime import datetime
 #importamos la base de datos definida en app
-from app import db
+from app import app,db
 
 #Un modelo de usuario con id autoincrementando
 #un string username de hasta 64 caracteres
